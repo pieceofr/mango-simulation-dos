@@ -21,6 +21,11 @@ download_file() {
 		fi
 	done
 }
+
+upload_file() {
+	gsutil cp  $1 gs://mango_bencher-dos/$2
+}
+
 function get_testnet_ver() {
     local ret
     for retry in 0 1 2
