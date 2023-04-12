@@ -40,6 +40,8 @@ sudo dpkg --configure -a
 sudo apt update
 ## pre-install and rust version
 sudo apt-get install -y libssl-dev libudev-dev pkg-config zlib1g-dev llvm clang cmake make libprotobuf-dev protobuf-compiler
+echo $dos_program_dir
+. "$HOME/.profile"
 rustup default stable
 rustup update
 
