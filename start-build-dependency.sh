@@ -51,8 +51,10 @@ sudo dpkg --configure -a
 sudo apt update
 ## pre-install and rust version
 sudo apt-get install -y libssl-dev libudev-dev pkg-config zlib1g-dev llvm clang cmake make libprotobuf-dev protobuf-compiler
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-sudo apt-get install -y nodejs
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg \
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_18.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list \
+sudo apt-get update
+sudo apt-get install nodejs -y
 sudo npm install -g typescript
 sudo npm install -g ts-node
 sudo npm install -g yarn
